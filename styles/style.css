@@ -4,12 +4,11 @@
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing:border-box; 
+  margin:0;
+  padding: 0; 
 }
 
-body {
-  margin:0;
-}
 
 button:not([disabled]) {
   cursor:pointer;
@@ -24,7 +23,10 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: red;
+  --color-background: black;
+  --color-normal-text: white;
+  --text-header: 
 }
 
 
@@ -37,9 +39,93 @@ button:not([disabled]) {
 
 h1 {
   color:var(--color-headings);
+  text-align: center;
+  padding: 1em;
+}
+
+p {
+  color: var(--color-normal-text);
+  text-align: center;
 }
 
 
 /* ... */
 
 
+body{
+  background-color:var(--color-background);
+  
+}
+
+li:first-of-type img{
+  width: 15vw;
+  min-width: 10vw;
+  
+  float: right;
+}
+
+li:nth-of-type(2) img:first-of-type{
+  width: 12vw;
+  left: 3em;
+  top: 0;
+  position: absolute;
+  animation: garfield-drop 4s;
+  
+}
+
+li:nth-of-type(2) div{
+  border-left: 1em white;
+  height: 5em;
+  position: absolute;
+  
+}
+
+li:nth-of-type(2) p{
+  left: 20em;
+  top: -20em;
+  position: absolute;
+  animation: garfield-info 4s;
+  
+}
+
+li:nth-of-type(2) img:nth-of-type(2){
+  width: 8vw;
+  left: 3em;
+  top: -20em;
+  position: absolute;
+  animation: garfield-info 4s;
+  
+  
+}
+/*
+section {
+  animation: garfield 4s;
+
+}
+*/
+@keyframes garfield-drop {
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 25em;
+  }
+}
+
+@keyframes garfield-info {
+  0%{
+    top: -20em;
+  }
+  100%{
+    top: 5em;
+  }
+}
+
+li:nth-of-type(3) img{
+  width: 21vw;
+  bottom: 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
